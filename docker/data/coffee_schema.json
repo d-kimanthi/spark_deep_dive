@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "metadata": {
+        "comment": "Name of the coffee variety"
+      },
+      "name": "name",
+      "nullable": true,
+      "type": "string"
+    },
+    {
+      "metadata": {
+        "comment": "Roast level from 1 (light) to 10 (dark)"
+      },
+      "name": "roast",
+      "nullable": true,
+      "type": "double"
+    }
+  ],
+  "type": "struct"
+}

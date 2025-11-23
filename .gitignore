@@ -1,1 +1,15 @@
 /spark-*
+*.parquet.*
+
+# ignore .parquet folders
+*.parquet/
+
+# Ignore Spark output folders
+coffee.parquet/
+*_parquet/
+*.avro/
+*.orc/
+*.delta/
+output/
+_SUCCESS
+.crc
