@@ -87,8 +87,8 @@
       "title": "Read, Transform and Write (ETL)",
       "text": "%pyspark\n\nspark.read.option(\"inferSchema\", \"false\")\\\n    .schema(coffee_schema_restored)\\\n    .csv(\"file:///learn/raw-coffee.txt\")\\\n    .write\\\n    .format(\"parquet\")\\\n    .mode(\"overwrite\")\\\n    .save(\"file:///learn/coffee.parquet\")",
       "user": "anonymous",
-      "dateUpdated": "2025-11-23 00:41:16.874",
-      "progress": 0,
+      "dateUpdated": "2025-11-23 00:53:45.897",
+      "progress": 100,
       "config": {
         "editorSetting": {
           "language": "python",
@@ -120,7 +120,7 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d30"
+              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d35"
             }
           ],
           "interpreterSettingId": "spark"
@@ -130,8 +130,8 @@
       "jobName": "paragraph_1611017093358_204766208",
       "id": "paragraph_1610923180042_1100920629",
       "dateCreated": "2021-01-19 00:44:53.358",
-      "dateStarted": "2025-11-23 00:41:16.880",
-      "dateFinished": "2025-11-23 00:41:19.384",
+      "dateStarted": "2025-11-23 00:53:45.933",
+      "dateFinished": "2025-11-23 00:53:49.569",
       "status": "FINISHED"
     },
     {
