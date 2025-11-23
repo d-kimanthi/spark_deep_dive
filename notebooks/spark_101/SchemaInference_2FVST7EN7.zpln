@@ -1,0 +1,271 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Data Inception: Using Spark to help Spark\nIn this following notebook, we will learn to use Spark to help us work more efficiently.\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-01-31 19:52:44.840",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch2\u003eData Inception: Using Spark to help Spark\u003c/h2\u003e\n\u003cp\u003eIn this following notebook, we will learn to use Spark to help us work more efficiently.\u003c/p\u003e\n\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1610923294026_749698639",
+      "id": "paragraph_1610923294026_749698639",
+      "dateCreated": "2021-01-17 22:41:34.026",
+      "dateStarted": "2021-01-31 19:52:44.865",
+      "dateFinished": "2021-01-31 19:52:44.884",
+      "status": "FINISHED"
+    },
+    {
+      "title": "Read as CSV",
+      "text": "%pyspark\n\n#load the same file from the IntroToSparkOnZeppelin \n\ncoffees \u003d spark.read.csv(\"file:///learn/raw-coffee.txt\").toDF(\"name\",\"roast\")\ncoffees.show()",
+      "user": "anonymous",
+      "dateUpdated": "2025-11-23 00:40:53.464",
+      "progress": 100,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+-----------+-----+\n|       name|roast|\n+-----------+-----+\n|    folgers|   10|\n|      yuban|   10|\n|  nespresso|   10|\n|     ritual|    4|\n|four barrel|    5|\n+-----------+-----+\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d28"
+            },
+            {
+              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d29"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1610923180042_1100920629",
+      "id": "paragraph_1610923180042_1100920629",
+      "dateCreated": "2021-01-17 22:39:40.043",
+      "dateStarted": "2025-11-23 00:40:53.501",
+      "dateFinished": "2025-11-23 00:40:57.348",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\ncoffees.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-11-22 23:21:14.707",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- name: string (nullable \u003d true)\n |-- roast: string (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1763853652228_306260796",
+      "id": "paragraph_1763853652228_306260796",
+      "dateCreated": "2025-11-22 23:20:52.233",
+      "dateStarted": "2025-11-22 23:21:14.717",
+      "dateFinished": "2025-11-22 23:21:15.034",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\ncoffee_and_schema \u003d spark.read.option(\"inferSchema\", True).csv(\"file:///learn/raw-coffee.txt\").toDF(\"name\",\"roast\")\n\ncoffee_and_schema.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2025-11-22 23:19:41.884",
+      "progress": 100,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- name: string (nullable \u003d true)\n |-- roast: double (nullable \u003d true)\n\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d13"
+            },
+            {
+              "jobUrl": "http://zeppelin:4040/jobs/job?id\u003d14"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1763853002535_1758090346",
+      "id": "paragraph_1763853002535_1758090346",
+      "dateCreated": "2025-11-22 23:10:02.539",
+      "dateStarted": "2025-11-22 23:19:41.890",
+      "dateFinished": "2025-11-22 23:19:44.149",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\nimport pyspark.sql.types as T\nimport json\n\n# Steal the schema from initial spark load\ncoffee_schema \u003d coffee_and_schema.schema\nprint(coffee_schema)\n\n#convert schema to json - maybe for sharing or version control\nschema_json_str \u003d coffee_schema.json()\nwith open(\"/learn/coffee_schema.json\", \"w\") as f:\n    json.dump(json.loads(schema_json_str), f, indent\u003d4)\n    # json.dump(schema_json_str, f, indent\u003d4)\n\nprint(type(schema_json_str))\nprint(schema_json_str)\n\n#load shema from stored earlier stored schema\ncoffee_schema_restored \u003d T.StructType.fromJson(json.loads(schema_json_str))\nprint(coffee_schema_restored)\n\n\n# Read the coffee csv using the stolen schema directly\ncoffees_custom_schema \u003d spark.read \\\n    .option(\"inferSchema\", False) \\\n    .schema(coffee_schema) \\\n    .csv(\"file:///learn/raw-coffee.txt\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-11-23 00:27:04.327",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "StructType([StructField(\u0027name\u0027, StringType(), True), StructField(\u0027roast\u0027, DoubleType(), True)])\n\u003cclass \u0027str\u0027\u003e\n{\"fields\":[{\"metadata\":{},\"name\":\"name\",\"nullable\":true,\"type\":\"string\"},{\"metadata\":{},\"name\":\"roast\",\"nullable\":true,\"type\":\"double\"}],\"type\":\"struct\"}\nStructType([StructField(\u0027name\u0027, StringType(), True), StructField(\u0027roast\u0027, DoubleType(), True)])\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1763853122865_1096088832",
+      "id": "paragraph_1763853122865_1096088832",
+      "dateCreated": "2025-11-22 23:12:02.872",
+      "dateStarted": "2025-11-23 00:27:04.333",
+      "dateFinished": "2025-11-23 00:27:04.654",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-11-22 23:30:06.737",
+      "progress": 0,
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1763854206732_812623976",
+      "id": "paragraph_1763854206732_812623976",
+      "dateCreated": "2025-11-22 23:30:06.737",
+      "status": "READY"
+    }
+  ],
+  "name": "SchemaInference",
+  "id": "2FVST7EN7",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
