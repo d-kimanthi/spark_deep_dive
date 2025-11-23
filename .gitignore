@@ -4,3 +4,17 @@
 # ignore .parquet folders
 *.parquet/
 
+/notebook
+/notebooks/*
+
+# ignore notobook folder files
+notobook/* 
+docker/notebook/
+docker/data/mysqldir/
+*.jar
+
+*.parquet*
+_SUCCESS
+*.crc
+.DS_Store
+logs/
