@@ -7,7 +7,7 @@ This module provides the event extraction and transformation logic.
 from pyspark.sql import DataFrame, SparkSession
 from pyspark.sql.functions import col
 
-from coffeeco.data.dataframe_transformer import DataFrameTransformer
+from coffeeco.dataframe_transformer import DataFrameTransformer
 
 
 class SparkEventExtractor(DataFrameTransformer):

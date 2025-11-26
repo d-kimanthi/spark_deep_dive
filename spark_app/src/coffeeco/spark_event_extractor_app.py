@@ -8,8 +8,8 @@ import logging
 
 from pyspark.sql import SaveMode
 
-from coffeeco.data.spark_batch_application import SparkBatchApplication
-from coffeeco.data.spark_event_extractor import SparkEventExtractor
+from coffeeco.spark_batch_application import SparkBatchApplication
+from coffeeco.spark_event_extractor import SparkEventExtractor
 
 # Configure logging
 logging.basicConfig(

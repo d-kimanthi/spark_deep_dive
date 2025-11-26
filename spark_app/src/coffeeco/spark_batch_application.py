@@ -8,7 +8,7 @@ from abc import abstractmethod
 
 from pyspark.sql import SaveMode
 
-from coffeeco.data.spark_application import SparkApplication
+from coffeeco.spark_application import SparkApplication
 
 
 class SparkBatchApplication(SparkApplication):

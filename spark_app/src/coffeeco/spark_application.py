@@ -9,7 +9,7 @@ from abc import ABC, abstractmethod
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 
-from coffeeco.data.config.configuration import Configuration
+from coffeeco.config.configuration import Configuration
 
 
 class SparkApplication(ABC):
